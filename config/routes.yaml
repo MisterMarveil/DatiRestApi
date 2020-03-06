@@ -1,0 +1,33 @@
+# controllers:
+    # resource: '../src/Controller/'
+    # type:     annotation
+dati_index_path:
+    path: /get/operation
+    controller: App\Controller\IndexController::indexAction
+
+dati_sms_delivery_status:
+    path: /delivery-status
+    controller: App\Controller\IndexController::deliverStatus
+
+register:
+    path: /register
+    controller: App\Controller\AuthController::register
+    methods: POST
+
+api_login_check:
+    path: /api/login_check
+    controller: App\Controller\AuthController::getTokenUser  
+
+# fos_user:
+    # resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# fos_oauth_server_token:
+    # resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+# Add this route option only if you are going to use the Authorization code flow
+# fos_oauth_server_authorize:
+    # resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+    
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
+    prefix:   /api/doc
